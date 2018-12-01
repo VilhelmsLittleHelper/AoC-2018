@@ -11,9 +11,7 @@ def day1part1():
     file = open("values.txt", "r")
     values = file.readlines()
 
-    vector = []
     for value in values:
-        vector.append(freq)
         number = int(value.replace('\n', ''))
         freq = freq + number
 
