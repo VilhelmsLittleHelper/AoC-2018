@@ -40,6 +40,7 @@ class Board:
                     self.check_index += 1
                     break
                 return False
+            self.check_index += 1
         return True
 		#Part 1
         #if len(self.list) >= self.number_of_recipes + 10:
