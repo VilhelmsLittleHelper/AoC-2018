@@ -61,7 +61,7 @@ while run_program:
 #    test = board.list[-1].pop(-1)
 #    answer.insert(0, test)
 board_list = board.list
-board_list = List(board_list)
+board_list = list(board_list)
 answer = board_list[board.number_of_recipes:(board.number_of_recipes+10)]
 
 print(answer)
