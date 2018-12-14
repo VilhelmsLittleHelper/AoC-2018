@@ -1,6 +1,7 @@
 # (raw code)
 # Part 1
 
+from collections import deque
 
 class Elf:
     def __init__(self, elf):
@@ -14,19 +15,17 @@ class Elf:
 class Board:
     def __init__(self):
         self.elves = [Elf(1), Elf(2)]
-        self.list = [3, 7]
+        self.list = deque([3, 7])
         self.number_of_recipes = 9
 
     def step(self):
-        new_row = self.list.copy()
-        new_recipe = new_row[self.elves[0].index] + new_row[self.elves[1].index]
+        new_recipe = self.list[self.elves[0].index] + self.list[self.elves[1].index]
         if new_recipe >= 10:
-            new_row.append(1)
+            self.list.append(1)
             new_recipe += -10
-        new_row.append(new_recipe)
-        self.elves[0].set_new_index(new_row[self.elves[0].index], len(new_row))
-        self.elves[1].set_new_index(new_row[self.elves[1].index], len(new_row))
-        self.list = new_row
+        self.list.append(new_recipe)
+        self.elves[0].set_new_index(self.list[self.elves[0].index], len(self.list))
+        self.elves[1].set_new_index(self.list[self.elves[1].index], len(self.list))
 
     def print_board(self):
         for row in self.list:
@@ -37,14 +36,14 @@ class Board:
         #test = self.number_of_recipes + 10
         #print(test)
         if len(self.list) >= self.number_of_recipes + 10:
-            if self.elves[0].index == self.number_of_recipes - 1:
-                return False
+            #if self.elves[0].index == self.number_of_recipes - 1:
+            return False
         return True
 
 
 
 board = Board()
-board.number_of_recipes = 18
+board.number_of_recipes = 33121
 
 #for i in range(20):
 #    board.step()
