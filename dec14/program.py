@@ -43,7 +43,7 @@ class Board:
 
 
 board = Board()
-board.number_of_recipes = 33121
+board.number_of_recipes = 330121
 
 #for i in range(20):
 #    board.step()
@@ -60,8 +60,9 @@ while run_program:
 #for i in range(10):
 #    test = board.list[-1].pop(-1)
 #    answer.insert(0, test)
-
-answer = board.list[board.number_of_recipes:(board.number_of_recipes+10)]
+board_list = board.list
+board_list = List(board_list)
+answer = board_list[board.number_of_recipes:(board.number_of_recipes+10)]
 
 print(answer)
 
