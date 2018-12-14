@@ -34,7 +34,7 @@ class Board:
 
     def check_stop(self):
 	    check_string = str(self.number_of_recipes)
-        while self.check_index < (len(self.list) - len(check_string) - 1:
+        while self.check_index < (len(self.list) - len(check_string) - 1):
             for test_index in range(len(check_string)):
                 if check_string[test_index] != self.list[self.check_index + test_index]:
                     self.check_index += 1
