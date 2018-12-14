@@ -41,7 +41,7 @@ class Board:
 					break
 				return False
 		return True
-        #Part1
+		#Part 1
         #if len(self.list) >= self.number_of_recipes + 10:
         #    return False
         #return True
