@@ -17,7 +17,7 @@ class Board:
         self.elves = [Elf(1), Elf(2)]
         self.list = deque([3, 7])
         self.number_of_recipes = 9
-		self.check_index = 0
+        self.check_index = 0
 
     def step(self):
         new_recipe = self.list[self.elves[0].index] + self.list[self.elves[1].index]
@@ -33,7 +33,7 @@ class Board:
             print(row)
 
     def check_stop(self):
-	    check_string = str(self.number_of_recipes)
+        check_string = str(self.number_of_recipes)
         while self.check_index < (len(self.list) - len(check_string) - 1):
             for test_index in range(len(check_string)):
                 if check_string[test_index] != self.list[self.check_index + test_index]:
